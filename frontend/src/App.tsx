@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, useMemo } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import './index.css';
 
 
@@ -11,7 +11,7 @@ import './index.css';
 
         const TopNavBar = () => {
             const location = useLocation();
-            const isActive = (path) => location.pathname === path;
+            const isActive = (path: string) => location.pathname === path;
 
             return (
                 <header className="fixed top-0 w-full z-50 bg-surface border-b border-surface-border flex justify-between items-center px-margin-desktop h-16">
@@ -40,48 +40,6 @@ import './index.css';
             );
         };
 
-        const SideNavBar = () => {
-            const location = useLocation();
-            const isActive = (path) => location.pathname === path;
-
-            return (
-                <aside className="hidden md:flex flex-col h-[calc(100vh-64px)] w-64 fixed left-0 top-16 bg-surface-container border-r border-surface-border py-base z-40">
-                    <div className="px-6 py-4">
-                        <div className="flex items-center gap-2 mb-1">
-                            <span className="font-headline-md text-headline-md font-bold text-on-surface">SegmentML</span>
-                        </div>
-                        <p className="text-on-surface-variant font-label-sm text-label-sm">Precision Analytics</p>
-                    </div>
-                    <nav className="flex-1 px-2 space-y-1 mt-4">
-                        <Link to="/" className={`flex items-center gap-3 px-4 py-3 transition-all ${isActive('/') ? 'text-primary font-bold border-r-2 border-primary bg-surface-container-high' : 'text-on-surface-variant hover:bg-surface-container-high'}`}>
-                            <span className="material-symbols-outlined">dashboard</span>
-                            <span className="font-label-md text-label-md">Project Overview</span>
-                        </Link>
-                        <Link to="/analysis" className={`flex items-center gap-3 px-4 py-3 transition-all ${isActive('/analysis') ? 'text-primary font-bold border-r-2 border-primary bg-surface-container-high' : 'text-on-surface-variant hover:bg-surface-container-high'}`}>
-                            <span className="material-symbols-outlined">analytics</span>
-                            <span className="font-label-md text-label-md">Model Analysis</span>
-                        </Link>
-                        <Link to="/developer" className={`flex items-center gap-3 px-4 py-3 transition-all ${isActive('/developer') ? 'text-primary font-bold border-r-2 border-primary bg-surface-container-high' : 'text-on-surface-variant hover:bg-surface-container-high'}`}>
-                            <span className="material-symbols-outlined">account_circle</span>
-                            <span className="font-label-md text-label-md">About Developer</span>
-                        </Link>
-                    </nav>
-                    <div className="px-4 py-4 space-y-1 border-t border-surface-border">
-                        <button onClick={() => alert('Documentation opened')} className="w-full flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-secondary font-label-sm text-label-sm">
-                            <span className="material-symbols-outlined text-[18px]">description</span>
-                            <span>Documentation</span>
-                        </button>
-                        <button onClick={() => alert('Settings opened')} className="w-full flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-secondary font-label-sm text-label-sm">
-                            <span className="material-symbols-outlined text-[18px]">settings</span>
-                            <span>Settings</span>
-                        </button>
-                    </div>
-                    <div className="p-4">
-                        <button onClick={() => alert('Report exporting...')} className="w-full py-2 bg-outline-variant text-on-surface rounded font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">Export Report</button>
-                    </div>
-                </aside>
-            );
-        };
 
         const Footer = ({ marginLeft = true }) => (
             <footer className={`w-full py-8 bg-surface-container-lowest border-t border-surface-border mt-auto ${marginLeft ? 'md:pl-64' : ''}`}>
@@ -286,12 +244,7 @@ import './index.css';
                 { name: "Big Spenders", color: "text-primary", bg: "bg-primary-container/20", borderColor: "border-primary/30" }
             ];
 
-            const currentSegment = useMemo(() => {
-                if (spend > 6000) return segments[3];
-                if (spend > 2500 || items > 40) return segments[1];
-                if (items > 15) return segments[2];
-                return segments[0];
-            }, [spend, items]);
+
             const displaySegment = segments[clusterResult] || segments[0];
 
             const xPos = (spend / 10000) * 100;
