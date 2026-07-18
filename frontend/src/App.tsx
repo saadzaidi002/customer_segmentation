@@ -35,7 +35,6 @@ import './index.css';
                     <div className="flex items-center gap-4">
                         <button onClick={() => alert('Help center opened')} className="material-symbols-outlined text-on-surface-variant hover:text-primary">help</button>
                         <button onClick={() => alert('Model run initiated!')} className="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-lg font-label-md text-label-md hover:opacity-80 active:scale-95 transition-all">Run Model</button>
-                        <img className="w-8 h-8 rounded-full border border-surface-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe_GneqvnTMBaBXLIkGSxuHPUdn6rNntGO22MZJBCKlbLppAa6i_F1asyVTeOWd8ConoYVitHck6qxouC_JsiQM_KwgqmHPyvmbQYUbnBE4nALwMxFJ4XOkeUoBLEbJw0X2x63u2Am686IZFnso27qdcUY9u3-E1xZxMpy63rbZngtMbVOtLnBj9NVwcJYlxYJ-7LARWzUmuFYbaWD2QaS7fkyRLTdi0uhVcqWUyBSPaRrEnAb9wie" />
                     </div>
                 </header>
             );
