@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+        body { background-color: #111318; color: #e2e2e8; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glass-card { background: rgba(22, 27, 34, 0.7); backdrop-filter: blur(12px); border: 1px solid #30363D; }
+        .data-grid-pattern { background-image: radial-gradient(#30363D 1px, transparent 1px); background-size: 32px 32px; }
+        .cluster-1 { background-color: #6366F1; }
+        .cluster-2 { background-color: #2DD4BF; }
+        .cluster-3 { background-color: #afceba; }
+        .cluster-4 { background-color: #b8c4ff; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0A0C10; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363D; border-radius: 2px; }
+        .chart-point { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chart-point:hover { transform: scale(2.5); z-index: 50; }
+        .text-glow { text-shadow: 0 0 20px rgba(184, 196, 255, 0.3); }
+    
