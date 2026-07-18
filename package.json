@@ -1,9 +1,5 @@
 {
-  "name": "customer-segmentation-deploy",
+  "name": "customer-segmentation",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "postinstall": "cd frontend && npm install --legacy-peer-deps",
-    "build": "cd frontend && npm run build"
-  }
+  "private": true
 }
