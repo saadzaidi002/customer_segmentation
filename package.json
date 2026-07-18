@@ -1,10 +1,9 @@
 {
-  "name": "customer-segmentation-workspace",
+  "name": "customer-segmentation-deploy",
+  "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "frontend"
-  ],
   "scripts": {
-    "build": "npm run build --workspace=frontend"
+    "postinstall": "cd frontend && npm install --legacy-peer-deps",
+    "build": "cd frontend && npm run build"
   }
 }
